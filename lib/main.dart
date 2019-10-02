@@ -18,6 +18,13 @@ class MyApp extends StatelessWidget {
         title: Text(
           'Kapil Jhajhria',
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.share),
+            onPressed: sharePressed,
+          ),
+          IconButton(icon: Icon(Icons.refresh), onPressed: refreshPressed),
+        ],
       ),
       body: Center(
         child: Column(
@@ -39,6 +46,13 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   fontFamily: 'LobsterTwo-Regular'),
             ),
+            Container(
+              height: 2.0,
+              width: 70.0,
+//              padding: EdgeInsets.symmetric(vertical: 2.0, horizontal: 20.0),
+              margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
+              color: Colors.black,
+            ),
             Text(
               'Student',
               style: TextStyle(
@@ -47,34 +61,32 @@ class MyApp extends StatelessWidget {
               ),
             ),
             Card(
-              margin: EdgeInsets.all(8.0),
+              margin: EdgeInsets.all(14.0),
               elevation: 20.0,
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: ListTile(
-                  leading: Icon(Icons.call),
-                  title: Text(
-                    '9812345678',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  trailing: IconButton(
-                    icon: Icon(Icons.content_copy),
-                    onPressed: copyPressed,
-                  ),
+              child: ListTile(
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 10, horizontal: 20.0),
+                leading: Icon(Icons.call),
+                title: Text(
+                  '9812345678',
+                  style: TextStyle(fontSize: 18),
+                ),
+                trailing: IconButton(
+                  icon: Icon(Icons.content_copy),
+                  onPressed: copyPressed,
                 ),
               ),
             ),
             Card(
-              margin: EdgeInsets.all(8.0),
+              margin: EdgeInsets.all(14.0),
               elevation: 20.0,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ListTile(
-                  leading: Icon(Icons.email),
-                  title: Text(
-                    'kapil@gmail.com',
-                    style: TextStyle(fontSize: 18),
-                  ),
+              child: ListTile(
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 10, horizontal: 20.0),
+                leading: Icon(Icons.email),
+                title: Text(
+                  'kapil@gmail.com',
+                  style: TextStyle(fontSize: 18),
                 ),
               ),
             ),
@@ -87,6 +99,14 @@ class MyApp extends StatelessWidget {
 
 void copyPressed() {
   print('copy content pressed');
+}
+
+void sharePressed() {
+  print('share button pressed');
+}
+
+void refreshPressed() {
+  print('refresh pressed');
 }
 
 //Row(
